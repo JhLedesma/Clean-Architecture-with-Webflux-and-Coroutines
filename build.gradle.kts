@@ -7,7 +7,7 @@ plugins {
     kotlin("plugin.spring") version "1.5.10"
 }
 
-group = "com.wenance"
+group = "com.demo"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
@@ -16,13 +16,19 @@ repositories {
 }
 
 dependencies {
+    //db
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
+    implementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo:3.0.0")
+    //Web
     implementation("org.springframework.boot:spring-boot-starter-webflux")
+    //Json
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    //Kotlin
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+    //Test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
 }
