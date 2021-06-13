@@ -9,7 +9,7 @@ class BookClient(private val host:String, private val webClient: WebClient) {
     suspend fun getBookResponse(isbn: String): BookResponse =
         webClient
             .get()
-            .uri("$host?q=isbn:$isbn")
+            .uri("$host/books/v1/volumes?q=isbn:$isbn")
             .retrieve()
             .bodyToMono(BookResponse::class.java)
             .awaitSingleOrNull()
