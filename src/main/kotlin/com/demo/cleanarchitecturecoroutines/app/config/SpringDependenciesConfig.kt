@@ -11,13 +11,17 @@ import com.demo.cleanarchitecturecoroutines.repository.dao.PersonDao
 import com.demo.cleanarchitecturecoroutines.utils.ModelMapper
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.HttpHeaders
 import org.springframework.http.MediaType
 import org.springframework.web.reactive.function.client.WebClient
 
 @Configuration
+@EnableAutoConfiguration
+@ComponentScan(basePackages= ["com.demo.cleanarchitecturecoroutines"])
 class SpringDependenciesConfig(@Autowired private val personDao: PersonDao) {
 
     @Value("\${book.host}")

@@ -18,8 +18,9 @@ class PersonService(private val bookService: BookService, private val filmServic
         personRepository.save(Person(personInput.dni, personInput.name, bookAsync.await(), filmAsync.await()))
     }
 
-    suspend fun getPerson(dni: Long): Person? =
+    suspend fun getPerson(dni: Long): Person =
         personRepository.findByDni(dni)
+            ?: throw RuntimeException("Not found person for dni: $dni")
 
     suspend fun getPeople(): Flow<Person> =
         personRepository.findAll()

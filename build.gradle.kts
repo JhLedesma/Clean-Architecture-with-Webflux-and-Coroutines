@@ -21,6 +21,7 @@ dependencies {
     implementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo:3.0.0")
     //Web
     implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
     //Json
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     //Kotlin
