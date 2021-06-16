@@ -19,8 +19,8 @@ data class Result(
     val runningTimeInMinutes: Int,
     val seriesEndYear: Int,
     val seriesStartYear: Int,
-    val title: String,
-    val titleType: String
+    val title: String?,
+    val titleType: String?
 )
 
 
