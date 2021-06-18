@@ -9,7 +9,11 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
 
-class PersonService(private val bookService: BookService, private val filmService: FilmService, private val personRepository: PersonRepository){
+class PersonService(
+    private val bookService: BookService,
+    private val filmService: FilmService,
+    private val personRepository: PersonRepository
+) {
 
     suspend fun createPerson(personInput: PersonInput): Person = coroutineScope {
         val bookAsync = async { bookService.getBook(personInput.isbn) }
@@ -25,3 +29,4 @@ class PersonService(private val bookService: BookService, private val filmServic
     suspend fun getPeople(): Flow<Person> =
         personRepository.findAll()
 }
+

@@ -5,7 +5,12 @@ import kotlinx.coroutines.reactor.awaitSingleOrNull
 import org.springframework.web.reactive.function.client.WebClient
 import org.springframework.web.reactive.function.client.awaitBodyOrNull
 
-class FilmClient(private val host:String, private val apiKey: String, private val apiHost: String, private val webClient: WebClient) {
+class FilmClient(
+    private val host: String,
+    private val apiKey: String,
+    private val apiHost: String,
+    private val webClient: WebClient
+) {
 
     suspend fun getFilmResponse(title: String): FilmResponse =
         webClient
@@ -17,3 +22,4 @@ class FilmClient(private val host:String, private val apiKey: String, private va
             .awaitBodyOrNull()
             ?: throw RuntimeException("Not exist data for title: $title")
 }
+

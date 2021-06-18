@@ -14,3 +14,4 @@ class BookClient(private val host:String, private val webClient: WebClient) {
             .awaitBodyOrNull()
             ?: throw RuntimeException("Not exist data for isbn: $isbn")
 }
+

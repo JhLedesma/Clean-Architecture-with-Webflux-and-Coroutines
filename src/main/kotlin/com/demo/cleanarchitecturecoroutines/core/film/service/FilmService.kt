@@ -9,6 +9,15 @@ class FilmService(private val filmClient: FilmClient) {
         filmClient.getFilmResponse(title)
             .results
             .firstOrNull { !it.title.isNullOrEmpty() || !it.titleType.isNullOrEmpty() }
-            ?.let { Film(title, it.seriesStartYear, it.seriesEndYear, it.numberOfEpisodes, it.runningTimeInMinutes) }
+            ?.let {
+                Film(
+                    title,
+                    it.seriesStartYear,
+                    it.seriesEndYear,
+                    it.numberOfEpisodes,
+                    it.runningTimeInMinutes
+                )
+            }
             ?: throw RuntimeException("Not exist results for title: $title")
 }
+
