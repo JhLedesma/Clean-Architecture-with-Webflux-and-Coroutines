@@ -13,3 +13,4 @@ class SpringRun
 fun main(args: Array<String>) {
     runApplication<SpringRun>(*args)
 }
+

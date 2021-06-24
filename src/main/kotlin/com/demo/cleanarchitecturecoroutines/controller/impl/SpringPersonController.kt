@@ -1,4 +1,4 @@
-package com.demo.cleanarchitecturecoroutines.app.web
+package com.demo.cleanarchitecturecoroutines.controller.impl
 
 import com.demo.cleanarchitecturecoroutines.controller.PersonController
 import com.demo.cleanarchitecturecoroutines.core.person.model.Person
@@ -26,8 +26,8 @@ class SpringPersonController(@Autowired private val personController: PersonCont
     suspend fun getPeople(): Flow<Person> =
         personController.getPeople()
 
-
     @GetMapping("/people-stream", produces = [MediaType.APPLICATION_NDJSON_VALUE])
     suspend fun getPeopleStream(): Flow<Person> =
         personController.getPeople().onEach { delay(5000) }
 }
+
