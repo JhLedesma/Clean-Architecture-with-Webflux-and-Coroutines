@@ -3,7 +3,7 @@ En este proyecto combinamos lo mejor de dos mundos. Una arquitectura limpia y pr
 
 ## Articulo
 
-* #### [Medium](https://api.lleida.net/dtd/clickandsign/v1/es/#overview)
+* #### [Medium](https://jesusledesma.medium.com/migrando-a-clean-architecture-webflux-con-corrutinas-en-kotlin-parte-1-ec382b933438)
 
 ## Sobre este proyecto
 
