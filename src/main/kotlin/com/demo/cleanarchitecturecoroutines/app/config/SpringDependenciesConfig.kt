@@ -1,7 +1,7 @@
 package com.demo.cleanarchitecturecoroutines.app.config
 
-import com.demo.cleanarchitecturecoroutines.client.BookClient
-import com.demo.cleanarchitecturecoroutines.client.FilmClient
+import com.demo.cleanarchitecturecoroutines.client.impl.BookClientImpl
+import com.demo.cleanarchitecturecoroutines.client.impl.FilmClientImpl
 import com.demo.cleanarchitecturecoroutines.controller.PersonController
 import com.demo.cleanarchitecturecoroutines.core.book.service.BookService
 import com.demo.cleanarchitecturecoroutines.core.film.service.FilmService
@@ -44,9 +44,9 @@ class SpringDependenciesConfig(@Autowired private val personDao: PersonDao) {
     @Bean
     fun personRepository() = PersonAdapterRepository(personDao, modelMapper())
     @Bean
-    fun bookClient() = BookClient(bookHost, webClient())
+    fun bookClient() = BookClientImpl(bookHost, webClient())
     @Bean
-    fun filmClient() = FilmClient(filmHost, filmApiKey, filmHostKey, webClient())
+    fun filmClient() = FilmClientImpl(filmHost, filmApiKey, filmHostKey, webClient())
     @Bean
     fun bookService() = BookService(bookClient())
     @Bean
