@@ -7,10 +7,10 @@ import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRep
 
 @SpringBootApplication
 @EnableReactiveMongoRepositories("com.demo.cleanarchitecturecoroutines.repository")
-//@EntityScan("repository")
 @ComponentScan(basePackages = ["com.demo.cleanarchitecturecoroutines"])
 class SpringRun
 
 fun main(args: Array<String>) {
     runApplication<SpringRun>(*args)
 }
+
